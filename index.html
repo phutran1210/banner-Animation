@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Banner Animation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="scene">
+      <div class="moon"></div>
+      <img src="./img/forest.png" alt="forest" class="forest" />
+      <img src="./img/cloud1.png" alt="1" class="cloud1" />
+      <img src="./img/cloud2.png" alt="2" class="cloud2" />
+      <img src="./img/cloud3.png" alt="3" class="cloud3" />
+      <img src="./img/cloud1.png" alt="4" class="cloud4" />
+      <img src="./img/cloud2.png" alt="5" class="cloud5" />
+      <img src="./img/cloud3.png" alt="6" class="cloud6" />
+    </div>
+    <script type="text/javascript">
+      function stars() {
+        // Số lượng sao
+        var starsNumber = 999;
+        let scene = document.querySelector(".scene");
+        let i = 0;
+        while (i < starsNumber) {
+          let star = document.createElement("i");
+          let x = Math.floor(Math.random() * window.innerWidth);
+          let y = Math.floor(Math.random() * window.innerHeight);
+          let duration = Math.random() * 10;
+          let size = Math.random() * 2;
+          // tạo ra ngôi sao và kích thước
+          star.style.left = x + "px";
+          star.style.top = y + "px";
+          star.style.width = 1 + size + "px";
+          star.style.height = 1 + size + "px";
+
+          // style animaation star
+          star.style.animationDuration = 5 + duration + "s";
+          star.style.animationDelay = duration + "s";
+
+          // Tạo ra thẻ <i class="star">
+          scene.appendChild(star);
+          i++;
+        }
+      }
+      stars();
+    </script>
+  </body>
+</html>
